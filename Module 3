@@ -1,0 +1,33 @@
+using System;
+
+public class Octopus
+{
+    public readonly string Name;
+    public readonly int Legs = 8;
+
+    public Octopus(string name)
+    {
+        Name = name;
+    }
+
+    // Nested class (Module 3 concept)
+    public class Info
+    {
+        public static void Describe(Octopus o)
+        {
+            Console.WriteLine($"This octopus is named {o.Name} and has {o.Legs} legs.");
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Octopus myOctopus = new Octopus("Jack");
+
+        // ✅ Use nested class to describe the octopus
+        Octopus.Info.Describe(myOctopus);
+    }
+}
+
